@@ -1,0 +1,28 @@
+{
+  "name": "alarmy-chrome-extension",
+  "version": "1.0.0",
+  "description": "A modern Chrome extension for setting web-based alarms to help manage time on websites",
+  "keywords": [
+    "chrome-extension",
+    "timer",
+    "productivity",
+    "web-alarm",
+    "time-management"
+  ],
+  "author": "Hyperforge Studios",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperforge-studios/alarmy-extension.git"
+  },
+  "scripts": {
+    "build": "echo 'Extension is ready for loading in Chrome'",
+    "pack": "zip -r alarmy-extension.zip . -x '*.git*' 'node_modules/*' '*.zip' 'demo.html' 'INSTALLATION.md'",
+    "validate": "echo 'Validating extension files...' && ls -la manifest.json popup.html background.js content.js",
+    "demo": "echo 'Open demo.html in your browser to test the extension'"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Page - Test Alarmy! Extension</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 3em;
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .instructions h2 {
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .demo-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+        .fake-content {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .timer-info {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Alarmy! Extension Demo</h1>
+        
+        <div class="instructions">
+            <h2>📝 How to Test the Extension:</h2>
+            <ol>
+                <li><strong>Load the Extension:</strong> Go to <code>chrome://extensions/</code>, enable Developer mode, and click "Load unpacked" to load the Alarmy! extension folder.</li>
+                <li><strong>Set a Quick Timer:</strong> Click the Alarmy! icon in your toolbar and set a 10-second timer to test quickly.</li>
+                <li><strong>Choose Alert Type:</strong> Try both "Full Screen Alert" and "Corner Popup" to see the difference.</li>
+                <li><strong>Test "5 More Minutes":</strong> When the alert appears, click "5 more minutes" to test the extension functionality.</li>
+                <li><strong>View Active Timers:</strong> Check the popup to see your active timers counting down in real-time.</li>
+            </ol>
+        </div>
+
+        <div class="demo-content">
+            <h2>🎬 Simulated Content Area</h2>
+            <p>This page simulates a website like YouTube or Facebook where you might want to set time limits.</p>
+            
+            <div class="fake-content">
+                <h3>📺 "Interesting" Video Content</h3>
+                <p>Imagine this is an engaging video that's easy to watch for hours...</p>
+            </div>
+            
+            <div class="fake-content">
+                <h3>📱 Social Media Feed</h3>
+                <p>Scroll through endless content that keeps you engaged...</p>
+            </div>
+            
+            <div class="timer-info">
+                <h3>⏰ Timer Testing Zone</h3>
+                <p>Set a timer using the Alarmy! extension and wait for the alert to appear over this content!</p>
+                <p><strong>Current domain:</strong> <code id="current-domain">Loading...</code></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display current domain
+        document.getElementById('current-domain').textContent = window.location.hostname || 'localhost';
+        
+        // Add some dynamic content to make it feel more realistic
+        setInterval(() => {
+            const timestamp = new Date().toLocaleTimeString();
+            document.title = `Demo Page (${timestamp}) - Test Alarmy!`;
+        }, 1000);
+    </script>
+</body>
+</html>

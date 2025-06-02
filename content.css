@@ -1,0 +1,280 @@
+/* Alarmy! Content Script Styles */
+
+#alarmy-fullscreen-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: alarmy-fade-in 0.5s ease-out;
+}
+
+.alarmy-fullscreen-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.alarmy-fullscreen-content {
+    background: white;
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: alarmy-slide-up 0.6s ease-out 0.2s both;
+}
+
+.alarmy-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: alarmy-pulse 2s infinite;
+}
+
+.alarmy-title {
+    font-size: 48px;
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.alarmy-domain {
+    font-size: 20px;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.alarmy-message {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.alarmy-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.alarmy-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.alarmy-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.alarmy-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.alarmy-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.alarmy-btn-secondary:hover {
+    background: #edf2f7;
+    transform: translateY(-1px);
+}
+
+/* Corner Alert Styles */
+#alarmy-corner-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 350px;
+    z-index: 2147483647;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.alarmy-corner-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.alarmy-corner-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alarmy-corner-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.alarmy-corner-title {
+    font-weight: 600;
+    font-size: 16px;
+    flex: 1;
+}
+
+.alarmy-corner-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.alarmy-corner-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.alarmy-corner-content {
+    padding: 20px;
+}
+
+.alarmy-corner-domain {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.alarmy-corner-message {
+    color: #4a5568;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.alarmy-corner-actions {
+    padding: 0 20px 20px;
+}
+
+.alarmy-corner-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alarmy-corner-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Animations */
+@keyframes alarmy-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes alarmy-slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes alarmy-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .alarmy-fullscreen-content {
+        padding: 40px 20px;
+        margin: 20px;
+    }
+    
+    .alarmy-title {
+        font-size: 36px;
+    }
+    
+    .alarmy-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #alarmy-corner-alert {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    #alarmy-fullscreen-alert {
+        background: rgba(0, 0, 0, 0.98);
+    }
+    
+    .alarmy-fullscreen-content {
+        border: 2px solid #000;
+    }
+    
+    .alarmy-corner-container {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    #alarmy-fullscreen-alert,
+    .alarmy-fullscreen-content,
+    #alarmy-corner-alert {
+        animation: none;
+        transition: none;
+    }
+    
+    .alarmy-icon {
+        animation: none;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarmy! - Web Timer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>⏰ Alarmy!</h1>
+                <p class="brand">By: Hyperforge Studios</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="current-site">
+                <h3>Current Site:</h3>
+                <div id="current-domain" class="domain-display">Loading...</div>
+            </div>
+
+            <div class="timer-section">
+                <h3>Set Timer</h3>
+                <div class="time-inputs">
+                    <div class="input-group">
+                        <label for="hours">Hours</label>
+                        <input type="number" id="hours" min="0" max="23" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="minutes">Minutes</label>
+                        <input type="number" id="minutes" min="0" max="59" value="30">
+                    </div>
+                    <div class="input-group">
+                        <label for="seconds">Seconds</label>
+                        <input type="number" id="seconds" min="0" max="59" value="0">
+                    </div>
+                </div>
+
+                <div class="alert-type">
+                    <h4>Alert Type</h4>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="alertType" value="fullscreen" checked>
+                            <span class="radio-custom"></span>
+                            Full Screen Alert
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="alertType" value="corner">
+                            <span class="radio-custom"></span>
+                            Corner Popup
+                        </label>
+                    </div>
+                </div>
+
+                <div class="custom-message">
+                    <label for="message">Custom Message (Optional)</label>
+                    <textarea id="message" placeholder="Time to take a break!"></textarea>
+                </div>
+
+                <button id="start-timer" class="start-btn">Start Timer</button>
+            </div>
+
+            <div class="active-timers">
+                <h3>Active Timers</h3>
+                <div id="timer-list" class="timer-list">
+                    <p class="no-timers">No active timers</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
